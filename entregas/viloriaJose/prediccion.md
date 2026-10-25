@@ -9,3 +9,7 @@ El programa declara las variables de los billetes que usará, después declara e
   ## Explicación Reto Base
 
   Todo funciona como lo esperado, se le indica al usuario el valor que debe ingresar, si es suficiente devuelve el cambio e indica en que billetes y monedas hacerlo, en caso de no ser suficiente se le indica al usuario y todos los cambios mostrados son 0, y de esta manera con cada uno de los 4 precios.
+
+  ## Predicción Reto Extendido
+
+  Al ingresar un valor menor al del precio, le dice al usuario que es insuficiente, y se le asigna 0 al valor de cambio, lo que hace que no se devuelva nada.
