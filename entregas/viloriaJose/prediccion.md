@@ -13,3 +13,7 @@ El programa declara las variables de los billetes que usará, después declara e
   ## Predicción Reto Extendido
 
   Al ingresar un valor menor al del precio, le dice al usuario que es insuficiente, y se le asigna 0 al valor de cambio, lo que hace que no se devuelva nada.
+
+  ## Explicación Reto Extendido
+
+  Ocurre lo previsto, al ingresar un valor menor al del precio, se indica que no es suficiente y se le asigna o al valor de cambio, lo que hace que no se devuelva cambio, ya que tecnicamente no se esta pagando por no tener suficiente dinero.
