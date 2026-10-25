@@ -17,3 +17,7 @@ El programa declara las variables de los billetes que usará, después declara e
   ## Explicación Reto Extendido
 
   Ocurre lo previsto, al ingresar un valor menor al del precio, se indica que no es suficiente y se le asigna o al valor de cambio, lo que hace que no se devuelva cambio, ya que tecnicamente no se esta pagando por no tener suficiente dinero.
+
+ ## Reto ampliado
+ 
+ Se hicieron los cambios en el programa para que acepte y decuelva valores de centimos, ahora se inicializa el precio como double, se multiplica el precio por 100, y lo convierte en un entero que trunca los errores que puedan tener las operaciones con double, dando un valor exacto y permitiendo calcular el cambio con comodidad.

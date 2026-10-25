@@ -14,38 +14,64 @@ class DeveloperCambio {
         int moneda2;
         int moneda1;
         int restante;
+        
+        int centimo50;
+        int centimo20;
+        int centimo10;
+        int centimo5;
+        int centimo2;
+        int centimo1;
 
-        final int PRECIO_UNO;
-        PRECIO_UNO = 232;
+        final double PRECIO_UNO;
+        PRECIO_UNO = 232.00;
 
-        int dineroIngresado;
+        final int PRECIO_UNO_CENTIMOS;
+        PRECIO_UNO_CENTIMOS = (int) Math.round(PRECIO_UNO * 100);
+
+        double dineroIngresado;
 
         System.out.println("Debes pagar " + PRECIO_UNO + "€, ingrese el dinero:");
 
-        dineroIngresado = scanner.nextInt();
+        dineroIngresado = scanner.nextDouble();
+
+        int dineroIngresadoCentimos;
+        dineroIngresadoCentimos = (int) Math.round(dineroIngresado * 100);
 
         boolean puedePagar;
-        int cambio;
+        int cambioCentimos;
 
-        puedePagar = (dineroIngresado >= PRECIO_UNO);
-        cambio = dineroIngresado - PRECIO_UNO;
+        puedePagar = (dineroIngresadoCentimos >= PRECIO_UNO_CENTIMOS);
+        cambioCentimos = dineroIngresadoCentimos - PRECIO_UNO_CENTIMOS;
 
-        System.out.println(puedePagar ? "Tu cambio es " + cambio + "€" : "No tienes suficiente dinero");
+        System.out.println(puedePagar ? "Tu cambio es " + (cambioCentimos / 100.0) + "€" : "No tienes suficiente dinero");
 
-        cambio = puedePagar ? cambio : 0;
+        cambioCentimos = puedePagar ? cambioCentimos : 0;
 
-        billete100 = cambio / 100;
-        restante = cambio % 100;
-        billete50 = restante / 50;
+        billete100 = cambioCentimos / 10000;
+        restante = cambioCentimos % 10000;
+        billete50 = restante / 5000;
+        restante = restante % 5000;
+        billete20 = restante / 2000;
+        restante = restante % 2000;
+        billete10 = restante / 1000;
+        restante = restante % 1000;
+        billete5 = restante / 500;
+        restante = restante % 500;
+        moneda2 = restante / 200;
+        restante = restante % 200;
+        moneda1 = restante / 100;
+        restante = restante % 100;
+        centimo50 = restante / 50;
         restante = restante % 50;
-        billete20 = restante / 20;
+        centimo20 = restante / 20;
         restante = restante % 20;
-        billete10 = restante / 10;
+        centimo10 = restante / 10;
         restante = restante % 10;
-        billete5 = restante / 5;
+        centimo5 = restante / 5;
         restante = restante % 5;
-        moneda2 = restante / 2;
-        moneda1 = restante % 2;
+        centimo2 = restante / 2;
+        centimo1 = restante % 2;
+
         System.out.println(billete100 + " billete(s) de 100 € ");
         System.out.println(billete50 + " billete(s) de 50 € ");
         System.out.println(billete20 + " billete(s) de 20 € ");
@@ -53,32 +79,56 @@ class DeveloperCambio {
         System.out.println(billete5 + " billete(s) de 5 € ");
         System.out.println(moneda2 + " moneda(s) de 2 € ");
         System.out.println(moneda1 + " moneda(s) de 1 €");
+        System.out.println(centimo50 + " moneda(s) de 50 centimos ");
+        System.out.println(centimo20 + " moneda(s) de 20 centimos ");
+        System.out.println(centimo10 + " moneda(s) de 10 centimos ");
+        System.out.println(centimo5 + " moneda(s) de 5 centimos ");
+        System.out.println(centimo2 + " moneda(s) de 2 centimos ");
+        System.out.println(centimo1 + " moneda(s) de 1 centimos");
 
-        final int PRECIO_DOS;
-        PRECIO_DOS = 1;
+        final double PRECIO_DOS;
+        PRECIO_DOS = 1.00;
+
+        final int PRECIO_DOS_CENTIMOS;
+        PRECIO_DOS_CENTIMOS = (int) Math.round(PRECIO_DOS * 100);
 
         System.out.println("Debes pagar " + PRECIO_DOS + "€, ingrese el dinero:");
 
-        dineroIngresado = scanner.nextInt();
-        puedePagar = dineroIngresado >= PRECIO_DOS;
-        cambio = dineroIngresado - PRECIO_DOS;
+        dineroIngresado = scanner.nextDouble();
 
-        System.out.println(puedePagar ? "Tu cambio es " + cambio + "€" : "No tienes suficiente dinero");
+        dineroIngresadoCentimos = (int) Math.round(dineroIngresado * 100);
+        puedePagar = (dineroIngresadoCentimos >= PRECIO_DOS_CENTIMOS);
+        cambioCentimos = dineroIngresadoCentimos - PRECIO_DOS_CENTIMOS;
 
-        cambio = puedePagar ? cambio : 0;
+        System.out.println(puedePagar ? "Tu cambio es " + (cambioCentimos / 100.0) + "€" : "No tienes suficiente dinero");
 
-        billete100 = cambio / 100;
-        restante = cambio % 100;
-        billete50 = restante / 50;
+        cambioCentimos = puedePagar ? cambioCentimos : 0;
+
+        billete100 = cambioCentimos / 10000;
+        restante = cambioCentimos % 10000;
+        billete50 = restante / 5000;
+        restante = restante % 5000;
+        billete20 = restante / 2000;
+        restante = restante % 2000;
+        billete10 = restante / 1000;
+        restante = restante % 1000;
+        billete5 = restante / 500;
+        restante = restante % 500;
+        moneda2 = restante / 200;
+        restante = restante % 200;
+        moneda1 = restante / 100;
+        restante = restante % 100;
+        centimo50 = restante / 50;
         restante = restante % 50;
-        billete20 = restante / 20;
+        centimo20 = restante / 20;
         restante = restante % 20;
-        billete10 = restante / 10;
+        centimo10 = restante / 10;
         restante = restante % 10;
-        billete5 = restante / 5;
+        centimo5 = restante / 5;
         restante = restante % 5;
-        moneda2 = restante / 2;
-        moneda1 = restante % 2;
+        centimo2 = restante / 2;
+        centimo1 = restante % 2;
+
         System.out.println(billete100 + " billete(s) de 100 € ");
         System.out.println(billete50 + " billete(s) de 50 € ");
         System.out.println(billete20 + " billete(s) de 20 € ");
@@ -86,32 +136,56 @@ class DeveloperCambio {
         System.out.println(billete5 + " billete(s) de 5 € ");
         System.out.println(moneda2 + " moneda(s) de 2 € ");
         System.out.println(moneda1 + " moneda(s) de 1 €");
+        System.out.println(centimo50 + " moneda(s) de 50 centimos ");
+        System.out.println(centimo20 + " moneda(s) de 20 centimos ");
+        System.out.println(centimo10 + " moneda(s) de 10 centimos ");
+        System.out.println(centimo5 + " moneda(s) de 5 centimos ");
+        System.out.println(centimo2 + " moneda(s) de 2 centimos ");
+        System.out.println(centimo1 + " moneda(s) de 1 centimos");
 
-        final int PRECIO_TRES;
-        PRECIO_TRES = 37;
+        final double PRECIO_TRES;
+        PRECIO_TRES = 37.00;
+
+        final int PRECIO_TRES_CENTIMOS;
+        PRECIO_TRES_CENTIMOS = (int) Math.round(PRECIO_TRES * 100);
 
         System.out.println("Debes pagar " + PRECIO_TRES + "€, ingrese el dinero:");
 
-        dineroIngresado = scanner.nextInt();
-        puedePagar = dineroIngresado >= PRECIO_TRES;
-        cambio = dineroIngresado - PRECIO_TRES;
+        dineroIngresado = scanner.nextDouble();
 
-        System.out.println(puedePagar ? "Tu cambio es " + cambio + "€" : "No tienes suficiente dinero");
+        dineroIngresadoCentimos = (int) Math.round(dineroIngresado * 100);
+        puedePagar = (dineroIngresadoCentimos >= PRECIO_TRES_CENTIMOS);
+        cambioCentimos = dineroIngresadoCentimos - PRECIO_TRES_CENTIMOS;
 
-        cambio = puedePagar ? cambio : 0;
+        System.out.println(puedePagar ? "Tu cambio es " + (cambioCentimos / 100.0) + "€" : "No tienes suficiente dinero");
 
-        billete100 = cambio / 100;
-        restante = cambio % 100;
-        billete50 = restante / 50;
+        cambioCentimos = puedePagar ? cambioCentimos : 0;
+
+        billete100 = cambioCentimos / 10000;
+        restante = cambioCentimos % 10000;
+        billete50 = restante / 5000;
+        restante = restante % 5000;
+        billete20 = restante / 2000;
+        restante = restante % 2000;
+        billete10 = restante / 1000;
+        restante = restante % 1000;
+        billete5 = restante / 500;
+        restante = restante % 500;
+        moneda2 = restante / 200;
+        restante = restante % 200;
+        moneda1 = restante / 100;
+        restante = restante % 100;
+        centimo50 = restante / 50;
         restante = restante % 50;
-        billete20 = restante / 20;
+        centimo20 = restante / 20;
         restante = restante % 20;
-        billete10 = restante / 10;
+        centimo10 = restante / 10;
         restante = restante % 10;
-        billete5 = restante / 5;
+        centimo5 = restante / 5;
         restante = restante % 5;
-        moneda2 = restante / 2;
-        moneda1 = restante % 2;
+        centimo2 = restante / 2;
+        centimo1 = restante % 2;
+
         System.out.println(billete100 + " billete(s) de 100 € ");
         System.out.println(billete50 + " billete(s) de 50 € ");
         System.out.println(billete20 + " billete(s) de 20 € ");
@@ -119,32 +193,56 @@ class DeveloperCambio {
         System.out.println(billete5 + " billete(s) de 5 € ");
         System.out.println(moneda2 + " moneda(s) de 2 € ");
         System.out.println(moneda1 + " moneda(s) de 1 €");
+        System.out.println(centimo50 + " moneda(s) de 50 centimos ");
+        System.out.println(centimo20 + " moneda(s) de 20 centimos ");
+        System.out.println(centimo10 + " moneda(s) de 10 centimos ");
+        System.out.println(centimo5 + " moneda(s) de 5 centimos ");
+        System.out.println(centimo2 + " moneda(s) de 2 centimos ");
+        System.out.println(centimo1 + " moneda(s) de 1 centimos");
 
-        final int PRECIO_CUATRO;
+        final double PRECIO_CUATRO;
         PRECIO_CUATRO = 5;
+
+        final int PRECIO_CUATRO_CENTIMOS;
+        PRECIO_CUATRO_CENTIMOS = (int) Math.round(PRECIO_CUATRO * 100);
 
         System.out.println("Debes pagar " + PRECIO_CUATRO + "€, ingrese el dinero:");
 
-        dineroIngresado = scanner.nextInt();
-        puedePagar = dineroIngresado >= PRECIO_CUATRO;
-        cambio = dineroIngresado - PRECIO_CUATRO;
+        dineroIngresado = scanner.nextDouble();
 
-        System.out.println(puedePagar ? "Tu cambio es " + cambio + "€" : "No tienes suficiente dinero");
+        dineroIngresadoCentimos = (int) Math.round(dineroIngresado * 100);
+        puedePagar = (dineroIngresadoCentimos >= PRECIO_CUATRO_CENTIMOS);
+        cambioCentimos = dineroIngresadoCentimos - PRECIO_CUATRO_CENTIMOS;
 
-        cambio = puedePagar ? cambio : 0;
+        System.out.println(puedePagar ? "Tu cambio es " + (cambioCentimos / 100.0) + "€" : "No tienes suficiente dinero");
 
-        billete100 = cambio / 100;
-        restante = cambio % 100;
-        billete50 = restante / 50;
+        cambioCentimos = puedePagar ? cambioCentimos : 0;
+
+        billete100 = cambioCentimos / 10000;
+        restante = cambioCentimos % 10000;
+        billete50 = restante / 5000;
+        restante = restante % 5000;
+        billete20 = restante / 2000;
+        restante = restante % 2000;
+        billete10 = restante / 1000;
+        restante = restante % 1000;
+        billete5 = restante / 500;
+        restante = restante % 500;
+        moneda2 = restante / 200;
+        restante = restante % 200;
+        moneda1 = restante / 100;
+        restante = restante % 100;
+        centimo50 = restante / 50;
         restante = restante % 50;
-        billete20 = restante / 20;
+        centimo20 = restante / 20;
         restante = restante % 20;
-        billete10 = restante / 10;
+        centimo10 = restante / 10;
         restante = restante % 10;
-        billete5 = restante / 5;
+        centimo5 = restante / 5;
         restante = restante % 5;
-        moneda2 = restante / 2;
-        moneda1 = restante % 2;
+        centimo2 = restante / 2;
+        centimo1 = restante % 2;
+
         System.out.println(billete100 + " billete(s) de 100 € ");
         System.out.println(billete50 + " billete(s) de 50 € ");
         System.out.println(billete20 + " billete(s) de 20 € ");
@@ -152,6 +250,12 @@ class DeveloperCambio {
         System.out.println(billete5 + " billete(s) de 5 € ");
         System.out.println(moneda2 + " moneda(s) de 2 € ");
         System.out.println(moneda1 + " moneda(s) de 1 €");
+        System.out.println(centimo50 + " moneda(s) de 50 centimos ");
+        System.out.println(centimo20 + " moneda(s) de 20 centimos ");
+        System.out.println(centimo10 + " moneda(s) de 10 centimos ");
+        System.out.println(centimo5 + " moneda(s) de 5 centimos ");
+        System.out.println(centimo2 + " moneda(s) de 2 centimos ");
+        System.out.println(centimo1 + " moneda(s) de 1 centimos");
 
         System.out.println();
 
